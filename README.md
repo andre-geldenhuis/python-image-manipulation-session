@@ -8,13 +8,41 @@ We're going to need a few things to get started.  For this session we'll using s
 
 ### On your computer
 
-<details>
-<summary>Windows</summary>
+We're going to need to install somethings on your computer or laptop.  If you already have, a terminal, a python install, git then just use those, let's not confuse anything by installing more. Otherwise install the things you are missng.
 
-### A terminal of some sort
+#### A terminal
+
+You're going to need to do somethings in a terminal. While Windows does come with a terminal, it's a bit different from MacOS and Linux - plus I don't really know how it works! So windows users will need to setup one of the following terminals.  I suggest WSL2 if possible.
+
+##### Windows terminal options for this session:
 * WSL2 - preferably
 * Git bash
-</details>
+
+#### Python
+
+We'll be using python for this so you'll need that.  There are a lot of ways of doing this - for Mac and Linux users, your system python should be fine.  For windows, if you're using WSL2 - you should be good to go, otherwise try installing the official python package
+
+#### Git
+
+Windows: If in WSL2 - see linux below. Otherwise use the official git installer.
+Linux: If ubuntu/debian - ```sudo apt install git``` if a rhel derivative ```sudo yum install git``` if arch or some other distro, I'll leave it as an excercise to the reader!
+MacOS: Either the offical git installer or ```brew install git```
+
+### On the web
+
+We're going to be version controlling things as we go, so it's a good idea to get setup with a github account if you haven't already.
+
+#### Configure Git
+
+If you've already configured git and use it from time to time, skip this.
+
+Setup a name that your git commits will attributed to.  I just used my real name, but understandably some folk are not comfortable with that, so feel free to use a handle.  Though do note that your github precence might last a long time, explaining to future friends why you chose "darkwings_of_doom95" could be a little awkward.
+```
+git config --global user.name "Your Name"
+```
+
+Lastly set your email address to *either* the email address you signed up to github, *or* a [noreply email address for you provided by github to keep your personal email address secret](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address)
+
 
 ## The Dataset
 
