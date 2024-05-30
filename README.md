@@ -2,6 +2,20 @@
 # Python Image Manipulation with thousands of files
 ## Or, How to Get Computers to Do Tedious Things for You
 
+## The Setup
+
+We're going to need a few things to get started.  For this session we'll using somethings you need to setup in advance.
+
+### On your computer
+
+<details>
+<summary>Windows</summary>
+
+### A terminal of some sort
+* WSL2 - preferably
+* Git bash
+</details>
+
 ## The Dataset
 
 We will be utilizing images from camera traps to experiment with manipulating images on a small scale - hundreds of images, and on a grand scale (on your own time!) - hundreds of thousands of images. Here are the data and instructions for accessing it: https://lila.science/datasets/wellingtoncameratraps
