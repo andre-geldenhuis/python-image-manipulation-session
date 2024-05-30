@@ -2,46 +2,49 @@
 # Python Image Manipulation with thousands of files
 ## Or, How to Get Computers to Do Tedious Things for You
 
-## The Setup
+## The setup
 
-We're going to need a few things to get started.  For this session we'll using somethings you need to setup in advance.
 
-### On your computer
+Before we start our session, there are a few essential tools and programs you need to set up on your computer.
 
-We're going to need to install somethings on your computer or laptop.  If you already have, a terminal, a python install, git then just use those, let's not confuse anything by installing more. Otherwise install the things you are missng.
+### On Your Computer
 
-#### A terminal
+Make sure your laptop or desktop is equipped with the necessary tools. If you already have a terminal, Python installation, and Git, you can skip the installations. Just use what you already have to avoid confusion. Otherwise, install what's missing.
 
-You're going to need to do somethings in a terminal. While Windows does come with a terminal, it's a bit different from MacOS and Linux - plus I don't really know how it works! So windows users will need to setup one of the following terminals.  I suggest WSL2 if possible.
+#### Terminal
 
-##### Windows terminal options for this session:
-* WSL2 - preferably
-* Git bash
+You will need a terminal for this session. Although Windows comes with a terminal, it operates differently from those in MacOS and Linux. Windows users, please set up one of the following:
+##### Windows Terminal Options for This Session:
+
+* WSL2 (Windows Subsystem for Linux) - preferred
+* Git Bash
 
 #### Python
 
-We'll be using python for this so you'll need that.  There are a lot of ways of doing this - for Mac and Linux users, your system python should be fine.  For windows, if you're using WSL2 - you should be good to go, otherwise try installing the official python package
+Python is essential for our activities. MacOS and Linux users can generally use the system's default Python. For Windows, if you're using WSL2, you should be ready to go. Otherwise, download and install Python from the official Python website.
 
 #### Git
 
-Windows: If in WSL2 - see linux below. Otherwise use the official git installer.
-Linux: If ubuntu/debian - ```sudo apt install git``` if a rhel derivative ```sudo yum install git``` if arch or some other distro, I'll leave it as an excercise to the reader!
-MacOS: Either the offical git installer or ```brew install git```
+* Windows: If using WSL2, follow the instructions for Linux. Otherwise, download from the official Git website.
+* Linux: For Ubuntu/Debian, use ```sudo apt install git```. For RHEL-based systems, use ```sudo yum install git```. Users of Arch or other distros should refer to their specific documentation.
+* MacOS: Use the official Git installer or brew install git if you have Homebrew installed.
 
-### On the web
+#### On the Web
 
-We're going to be version controlling things as we go, so it's a good idea to get setup with a github account if you haven't already.
+It’s advisable to have a GitHub account for version control throughout our session.
 
-#### Configure Git
+##### Configure Git
 
-If you've already configured git and use it from time to time, skip this.
+If you're already familiar with Git and use it regularly, you can skip this step.
 
-Setup a name that your git commits will attributed to.  I just used my real name, but understandably some folk are not comfortable with that, so feel free to use a handle.  Though do note that your github precence might last a long time, explaining to future friends why you chose "darkwings_of_doom95" could be a little awkward.
+Configure your Git username. You can use your real name or a pseudonym.
+
 ```
 git config --global user.name "Your Name"
 ```
 
-Lastly set your email address to *either* the email address you signed up to github, *or* a [noreply email address for you provided by github to keep your personal email address secret](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address)
+Finally, set your email address. You can use the one associated with your GitHub account or a noreply email provided by GitHub to keep your personal email private. [noreply email address for you provided by github to keep your personal email address secret](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address)
+
 
 
 ## The Dataset
