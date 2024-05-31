@@ -2,6 +2,13 @@
 # Python Image Manipulation with thousands of files
 ## Or, How to Get Computers to Do Tedious Things for You
 
+
+## Following along
+
+There is an in [browser version of this session](https://andre-geldenhuis.github.io/python-image-manipulation-session/) where you can do most of the single threaded steps without needing to install anything. (Using the [KupyterLite Xeus Kernel](https://github.com/jupyterlite/xeus) for those interested.)
+
+The better way to follow along is to install jupyterlab, git and a terminal locally.  See the [Setup instructions](https://github.com/andre-geldenhuis/python-image-manipulation-session/blob/main/SETUP.md)
+
 ## The Dataset
 
 We will be utilizing images from camera traps to experiment with manipulating images on a small scale - hundreds of images, and on a grand scale (on your own time!) - hundreds of thousands of images. Here are the data and instructions for accessing it: https://lila.science/datasets/wellingtoncameratraps
