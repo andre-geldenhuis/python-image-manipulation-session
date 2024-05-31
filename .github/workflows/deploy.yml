@@ -34,6 +34,7 @@ jobs:
           cp -r example_images content/ # example images
           mkdir content/output
           cp imageprocessing.ipynb content/ # main workbook
+          cp -r docs content/ # Docs with images
           jupyter lite build --contents content --output-dir dist
 
       - name: Upload artifact
