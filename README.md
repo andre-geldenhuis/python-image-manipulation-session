@@ -60,6 +60,12 @@ Let's download a couple of files to examine:
 ./azcopy cp "https://lilablobssc.blob.core.windows.net/wellington-unzipped/images/010116002950005as382.JPG" test_data/
 ```
 
+Or we can try aws s3 if that is easier - though note that s3 doesn't have the fast batch mode that azcopy does for subsets of the data.
+
+```bash
+aws s3 cp --no-sign-request "s3://us-west-2.opendata.source.coop/agentmorris/lila-wildlife/wellington-unzipped/images/010116002950005as381.JPG" test_data/
+```
+
 ## Downloading 100 Images for Testing
 
 For testing, let's download a subset of the images. To download multiple images, we could loop through and download one file at a time. However, due to some of azcopy's functionality, this might not yield the expected result and could be slow. After looking into the azcopy documentation, it suggests that we can download multiple files by feeding them as a list of file paths separated by a `;`.
