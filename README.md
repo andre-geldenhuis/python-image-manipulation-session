@@ -5,9 +5,9 @@
 
 ## Following along
 
-There is an in [browser version of this session](https://andre-geldenhuis.github.io/python-image-manipulation-session/) where you can do most of the single threaded steps without needing to install anything. (Using the [KupyterLite Xeus Kernel](https://github.com/jupyterlite/xeus) for those interested.)
+There is an in [browser version of this session](https://andre-geldenhuis.github.io/python-image-manipulation-session/) where you can do most of the single threaded steps without needing to install anything. (Using the [JupyterLite Xeus Kernel](https://github.com/jupyterlite/xeus) for those interested.)
 
-The better way to follow along is to install jupyterlab, git and a terminal locally.  See the [Setup instructions](https://github.com/andre-geldenhuis/python-image-manipulation-session/blob/main/SETUP.md)
+The better way to follow along is to install JupyterLab, git and a terminal locally.  See the [Setup instructions](https://github.com/andre-geldenhuis/python-image-manipulation-session/blob/main/SETUP.md)
 
 ## The Dataset
 
@@ -60,7 +60,7 @@ Let's download a couple of files to examine:
 ./azcopy cp "https://lilablobssc.blob.core.windows.net/wellington-unzipped/images/010116002950005as382.JPG" test_data/
 ```
 
-Or we can try aws s3 if that is easier - though note that s3 doesn't have the fast batch mode that azcopy does for subsets of the data.
+Or we can try AWS s3 if that is easier - though note that s3 doesn't have the fast batch mode that azcopy does for subsets of the data.
 
 ```bash
 aws s3 cp --no-sign-request "s3://us-west-2.opendata.source.coop/agentmorris/lila-wildlife/wellington-unzipped/images/010116002950005as381.JPG" test_data/
@@ -150,7 +150,7 @@ We'll use a Python library named `pillow` to manipulate images. This library is 
 
 We will be regenerating our list of image files in Python. Technically, we don't need to do this as we already have a list of the filenames. However, to keep things general (since you might not have a list of filenames in your specific application), we'll regenerate the file list in Python.
 
-### venv, conda, anaconda, oh my!
+### Virtual Environments - 8venv, conda, anaconda
 
 If you work on multiple Python projects, you'll likely have encountered Python virtual environments (venvs) and/or conda. You can think of these as ways to have a separate Python "install" or more accurately, an environment for each project. There are numerous reasons to use a venv or conda such as keeping different versions of a library separate. However, my favorite reason is reproducibility.
 
@@ -272,7 +272,7 @@ git commit -m "Made a start on image processing, printing out the files we need 
 git push
 ```
 
-## Lets edit an image
+## Let's edit an image
 
 Let's get a single image and crop the bottom of it.
 
@@ -565,7 +565,7 @@ runtime/3600
 
 This results in just under 3 hours, which is manageable if you're running the script occasionally. However, if you need to run the script frequently or on a much larger dataset, you might want to consider optimizing your script to reduce the run time. This could involve techniques like parallel processing, hardware acceleration, or even more efficient coding practices. Let's continue exploring these possibilities in the next section.
 
-### Going wide, really wide - multiprocessing
+### Going wide -  multiprocessing
 
 Let's make a copy of our imageprocess code
 ```bash
@@ -580,7 +580,7 @@ mp.cpu_count()
 #my computer returns 12, how many does yours?
 ```
 
-Looking though the python multiprocessing docs and examples, we see the easiest way to do this is to have a fuction which we run in parallel.  Let's make part of our new `imageprocess_parallel.py` a funtion which takes a single filename, applies our changes and saves the output
+Looking through the python multiprocessing docs and examples, we see the easiest way to do this is to have a function which we run in parallel.  Let's make part of our new `imageprocess_parallel.py` a function which takes a single filename, applies our changes and saves the output
 
 `imageprocess_parallel.py`
 ```python
@@ -640,11 +640,6 @@ def imageprocess(filepath):
     shape = [(x0, y0), (x1, y1)]
     draw.rectangle(shape, fill ="black",outline ="black")
 
-    #how will we save without overwriting?
-    # current filepath is
-    # PosixPath('/home/andre/Documents/talks/python_image_manip/test_data/images/010116060142029a3301.JPG')
-    #im1.save(filename)
-
     outpath = Path.cwd().joinpath(output_path,filepath.name)
 
     im_cropped.save(outpath)
@@ -655,7 +650,7 @@ for filepath in imfiles:
     imageprocess(filepath, output_path)
 ```
 
-That works, but adding the fuction first looks a bit messy and makes the code a little hard to follow. Let's move that to another file to make look tidier
+That works, but adding the function first looks a bit messy and makes the code a little hard to follow. Let's move that to another file to make look tidier
 
 `imagefunctions.py`
 ```python
@@ -704,11 +699,6 @@ def imageprocess(filepath):
 
     shape = [(x0, y0), (x1, y1)]
     draw.rectangle(shape, fill ="black",outline ="black")
-
-    #how will we save without overwriting?
-    # current filepath is
-    # PosixPath('/home/andre/Documents/talks/python_image_manip/test_data/images/010116060142029a3301.JPG')
-    #im1.save(filename)
 
     outpath = Path.cwd().joinpath(output_path,filepath.name)
 
@@ -857,10 +847,7 @@ def imageprocess(filepath):
     shape = [(x0, y0), (x1, y1)]
     draw.rectangle(shape, fill ="black",outline ="black")
 
-    #how will we save without overwriting?
-    # current filepath is
-    # PosixPath('/home/andre/Documents/talks/python_image_manip/test_data/images/010116060142029a3301.JPG')
-    #im1.save(filename)
+
 
     outpath = Path.cwd().joinpath(output_path,filepath.name)
 
