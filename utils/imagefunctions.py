@@ -53,5 +53,8 @@ def imageprocess(image_path, output_path = 'output'):
     draw.rectangle(shape, fill ="black",outline ="black")
     
     output_image_path = Path.cwd().joinpath(output_path,image_path.name)
+
+    # Create the directory if it doesn't exist
+    output_image_path.parent.mkdir(parents=True, exist_ok=True)
     
     im_cropped.save(output_image_path)
