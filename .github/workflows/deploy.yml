@@ -33,6 +33,8 @@ jobs:
           cp README.md content
           cp -r example_images content/ # example images
           cp -r utils content/ # Utility functions
+          mkdir content/metadata/
+          cp  metadata/filesubset.txt content/metadata/ 
           mkdir content/output
           cp imageprocessing.ipynb content/ # main workbook
           cp datadownload.ipynb content/ # main workbook
